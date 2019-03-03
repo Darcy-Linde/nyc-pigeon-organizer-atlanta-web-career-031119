@@ -30,12 +30,12 @@
 #   end
   
 def nyc_pigeon_organizer(data)
-  data.each_with_object({}) do |(key, value), hash|
+  data.each_with_object({}) do |(key, value), pigeon_list|
     value.each do |attribute, names|
       names.each do |name|
-        hash[name] ||= {}
-        hash[name][key] ||= []
-        hash[name][key] << attribute.to_s
+        pigeon_list[name] ||= {}
+        pigeon_list[name][key] ||= []
+        pigeon_list[name][key] << attribute.to_s
       end
     end
   end
